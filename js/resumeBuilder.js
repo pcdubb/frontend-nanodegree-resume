@@ -184,6 +184,45 @@ $("#header").append(HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage));
 
 
 
+
+
+
+function displayEducation(){
+for (school in education.schools){
+$("#education").append(HTMLschoolStart);
+
+var formattedSchool = HTMLschoolName.replace
+("%data%", education.schools[school].name);
+var formattedDegree = HTMLschoolDegree.replace
+("%data%", education.schools[school].degree);
+var formattedDates = HTMLschoolDates.replace
+("%data%", education.schools[school].years);
+var formattedLocation = HTMLschoolLocation.replace
+("%data%", education.schools[school].location);
+var formattedMajor = HTMLschoolMajor.replace
+("%data%", education.schools[school].major);
+
+
+
+
+$(".education-entry:last").prepend(formattedDates);
+$(".education-entry:last").prepend(formattedSchool);
+$(".education-entry:last").append(formattedLocation);
+$(".education-entry:last").append(formattedMajor);
+$(".education-entry:last").append(formattedDegree);
+}
+}
+
+displayEducation();
+
+
+
+
+
+
+
+
+
 function displayWork(){
 for (job in work.jobs){
 $("#workExperience").append(HTMLworkStart);
