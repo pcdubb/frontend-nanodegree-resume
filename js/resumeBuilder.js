@@ -4,26 +4,49 @@ var age = 44;
 var email = "paul.weyant@gmail.com";
 var mobile = "303-335-0877";
 var github = "pcdubb";
-var curLocation = "Zushi, Japan";
+// var location = "Denver, CO";
 
 
-var photoURL = "https://dl.dropboxusercontent.com/s/3ic53k1xk88mweq/Bruce.JPG?dl=0";
+var photoURL = "images/profile.jpg";
 
 var skills = ["Construction Management", " Structural Engineering", " Javascript"," Data Analyst", " Python"," Java", " HTML"];
 
-var welcomeMessage = "Hello, my name is Paul and this is my interactive resume";
+var welcomeMessage = "Paul's interactive resume";
 
-var contactInfo = {"email":email, 
+var contacts = {"email":email, 
 "mobile":mobile, 
 "github": github,
-"location":curLocation};
+"location":"Yokohama, Japan"};
 
 var bio = {"name":name, 
 "role":role, 
-"contactInfo":contactInfo, 
+"contacts":contacts, 
 "photoURL": photoURL,
 "welcomeMessage":welcomeMessage,
 "skills": skills};
+
+var projects = {
+	"projects":[
+	{
+	"title":"Afghanistan Buildings",
+	"dates":"2010",
+	"description":"Buildings Designed and built in Afghanistan for the Afghan police and army. All designs and engineering details were completed using Google Sketchup.",
+	"images":["images/Footer.jpg","images/CMU2.jpg","images/Roof.jpg"]
+	},
+	{
+	"title":"303 Property Mangement",
+	"dates":"2006 - Present",
+	"description":"Small collection of three rental propeties we own and operate. Website is 303PM.com",
+	"images":["http://www.303pm.com/uploads/1/3/9/7/1397620/1470850_orig.jpg","http://www.lakewoodtownhouse.com/uploads/1/3/9/7/1397620/865754_orig.jpg"]
+	},
+	{
+	"title":"Guantanamo Bay River Bridge and Warehouses",
+	"dates":"2008",
+	"description":"Led a team to construct a 200 foot bridge across the Guantanamo Bay river and we also constructed 2 x 8000 square foot warehouse facilities.",
+	"images":["images/Bridge1.jpg","images/Bridge2.jpg","images/Bridge3.jpg","images/kSpan1.jpg","images/kSpan2.jpg"]
+	}
+	]
+}
 
 
 var work = {
@@ -32,9 +55,25 @@ var work = {
 			"title": "Naval Officer",
 			"employer": "US Navy",
 			"yearsWorked": "12",
-			"location": "Tokyo, Japan",
+			"location": "Ventura, CA",
 			"dates" : "2004 - Present",
-			"description": "While reading a book in his living room, a male character hears his stomach grumble. Putting down the book, he walks to the kitchen. From the floor, his dog cocks its head at him. Things at this point are going smoothly. He pulls two slices of bread from an ornate breadbox (where the bread is staged in a ready to eat, in a way no normal person would have it)."
+			"description": "Experience with negotiating contract modifications, scope definitization, project scheduling, cost estimates, review of progress payments, design/build, design/bid/build, contract closeout, contract turnover, warranty issues, construction inspection, and general project administration and project management."
+		},
+		{
+			"title": "Afghanistan Southwest Region Support Command Engineer",
+			"employer": "US Navy",
+			"yearsWorked": "2",
+			"location": "Helmand, Afghanistan",
+			"dates" : "2010-2011",
+			"description": "Designed and planned facilities for the Afghan National Army and Police throughout Helmand Province, Afghanistan."
+		},
+		 {
+			"title": "Seabee Battalion Company Commander",
+			"employer": "US Navy",
+			"yearsWorked": "2",
+			"location": "Guantanamo Bay, Cuba",
+			"dates" : "2007-2009",
+			"description": "Company Commander of a 180 person Seabee construction company (builders and steelworkers). Led a 25 person detachment to Guantanamo Bay, Cuba to build a 200 foot bridge across the Guantanamo Bay river and also constructed 2-8000 square foot warehouse facilities."
 		},
 		{ 
 			"title": "Research Assistant",
@@ -42,7 +81,7 @@ var work = {
 			"yearsWorked": "2",
 			"location": "Golden, CO",
 			"dates" : "2001-2003",
-			"description": "Worked on thin film semiconductor research machines. The process was called plasma enhanced chemical vapor deposition and allowed the operator of the machine to deposit thin film semi-conductors onto various substrates such as glass and stainless steel. A lot of the people I worked with had doctorates in Physics, so they were pretty smart."
+			"description": "Worked on thin film semiconductor research machines. The process was called plasma enhanced chemical vapor deposition and allowed the operator of the machine to deposit thin film semi-conductors onto various substrates such as glass and stainless steel."
 		},
 		{ 
 			"title": "Nuclear Power Plant Operator",
@@ -50,7 +89,7 @@ var work = {
 			"yearsWorked": "6",
 			"location": "Norfolk, VA",
 			"dates" : "1993 - 1999",
-			"description": "Then he opens the refrigerator and pulls out a zip-locked package of pre-sliced meat for his sandwich. He pulls on it to no effect. He pulls harder and the meat package slips from his hand and lands in the dog’s water bowl. The dog retrieves the package of meat and runs into the living room. The man quickly runs after the dog, but trips on the carpet and lands on the floor with a thud. Fortunately, there is a squeaky toy within reach. He squeaks the toy several times to get the dog’s attention. The dog drops the meat into its doggie bed and comes to happily retrieve the toy. Satisfied, the man stands up, dusts himself off and retrieves the meat package from the dog bed."
+			"description": "Operated Naval nuclear power plant. Tasks included: Radiation monitoring, chemical sampling of the primary nuclear plant cooling water, operation of steam plant, and general duties associated with nuclear/steam power plant operation."
 		}
 	]
 }
@@ -91,7 +130,7 @@ var education = {
 "schools": [
 		{ 
 			"name": "Colorado School of Mines",
-			"city": "Golden, CO, US",
+			"location": "Golden, CO",
 			"degree": "Bachelors of Science",
 			"major": "Mechanical Engineering",
 			"minor": "Economics",
@@ -99,7 +138,7 @@ var education = {
 		},
 		{ 
 			"name": "University of Washington",
-			"city": "Seattle, WA, US",
+			"location": "Seattle, WA",
 			"degree": "Masters of Science",
 			"major": "Structural Engineering",
 			"years": "2012-2013"
@@ -115,10 +154,10 @@ var education = {
 $("#header").append(HTMLbioPic.replace("%data%",bio.photoURL));
 
 
-$("#topContacts").prepend(HTMLlocation.replace("%data%",contactInfo.location));
-$("#topContacts").prepend(HTMLgithub.replace("%data%",contactInfo.github));
-$("#topContacts").prepend(HTMLmobile.replace("%data%",contactInfo.mobile));
-$("#topContacts").prepend(HTMLemail.replace("%data%",contactInfo.email));
+$("#topContacts").prepend(HTMLlocation.replace("%data%",contacts.location));
+$("#topContacts").prepend(HTMLgithub.replace("%data%",contacts.github));
+$("#topContacts").prepend(HTMLmobile.replace("%data%",contacts.mobile));
+$("#topContacts").prepend(HTMLemail.replace("%data%",contacts.email));
 
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
 
@@ -170,10 +209,35 @@ $(".work-entry:last").append(formattedWorkDescritption);
 
 displayWork();
 
-// $("#header").append(HTMLworkTitle.replace("%data%",work.job[0].currentJob));
+projects.display = function() {
+	for (project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);		
+
+		if (projects.projects[project].images.length > 0){
+			for (image in projects.projects[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+projects.display();
+
+
+$("#mapDiv").append(googleMap);
 
 
 
-// $("#header").append(HTMLschoolName.replace("%data%",education.school));
-// $("#header").append(HTMLschoolDates.replace("%data%",education.years));
-// $("#header").append(HTMLskills.replace("%data%",bio.skills[0]));
+
+
+

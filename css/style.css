@@ -148,6 +148,11 @@ ul {
   display: none;
 }
 
+.projImage {
+  padding: 10px;
+  height: 150px;
+}
+
 img {
   padding: 10px;
 }
